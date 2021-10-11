@@ -2,8 +2,9 @@ import * as React from "react";
 import logo from "../../../logo.svg";
 import {Get} from "../utils/apiRequests";
 import {useEffect} from "react";
-import {Table} from "react-bootstrap";
-
+import {Button, Table} from "react-bootstrap";
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import CheckIcon from "@mui/icons-material/Check";
 export default function FilesBrowse() {
     const [files, setFiles] = React.useState(null)
 
@@ -18,6 +19,7 @@ export default function FilesBrowse() {
                     <td>Name</td>
                     <td>Portfolio ID</td>
                     <td>Portfolio Title</td>
+                    <td>Open</td>
                 </tr>
                 </thead>
                 <tbody>
@@ -28,6 +30,12 @@ export default function FilesBrowse() {
                             <td>{file.name}</td>
                             <td>{file.Portfolio._id}</td>
                             <td>{file.Portfolio.title}</td>
+                            <td>
+                                <a style={{textDecoration: "none", color: "white"}} target={"_blank"}
+                                href={"http://localhost:3001" + file.path}>
+                                    <Button variant="primary">
+                                    <OpenInNewIcon/>
+                                </Button></a></td>
                         </tr>
                     )
                 }

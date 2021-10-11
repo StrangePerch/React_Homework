@@ -97,7 +97,10 @@ export default function FilesModal({portfolio, initialEdit}) {
                     </Typography>
                     <div className="container-fluid p-0 my-3">
                         {files.map(file => <Badge className={"p-1 m-1"} bg="primary"
-                                                 key={file._id}>{file.name}</Badge>)}
+                                                 key={file._id}>
+                            <a style={{textDecoration: "none", color: "white"}} target={"_blank"}
+                                href={"http://localhost:3001" + file.path}>{file.name}</a>
+                        </Badge>)}
                     </div>
                 </Box>
             </Modal>
