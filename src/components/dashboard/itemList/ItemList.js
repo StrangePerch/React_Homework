@@ -20,6 +20,7 @@ export default class ItemList extends React.Component {
 
     render() {
         if (!this.state.isLoaded) return this.renderLoading();
+        if(this.state.items.length === 0) return this.renderEmpty();
         return this.renderData();
     }
 
@@ -74,6 +75,18 @@ export default class ItemList extends React.Component {
                     }
                     </tbody>
                 </Table>
+                <this.state.form api={this.state.api} posted={this.onPost.bind(this)}/>
+            </div>
+        )
+    }
+
+    renderEmpty() {
+        return (
+            <div>
+                <div className="d-flex flex-column justify-content-center">
+                    <img src={logo} className="App-logo" alt={"loading"}/>
+                    <h1>Collection is empty</h1>
+                </div>
                 <this.state.form api={this.state.api} posted={this.onPost.bind(this)}/>
             </div>
         )

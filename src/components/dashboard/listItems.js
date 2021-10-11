@@ -16,5 +16,8 @@ export const secondaryListItems = (
     <div>
         <ListSubheader inset>Api</ListSubheader>
         <MenuLink to={"/slider/edit"} label={"Slider"} icon={<TuneIcon/>}/>
+        <MenuLink to={"/portfolio/edit"} label={"Portfolio"} icon={<TuneIcon/>}/>
+        <MenuLink to={"/tags/browse"} label={"Tags"} icon={<TuneIcon/>}/>
+        <MenuLink to={"/files/browse"} label={"Files"} icon={<TuneIcon/>}/>
     </div>
 );

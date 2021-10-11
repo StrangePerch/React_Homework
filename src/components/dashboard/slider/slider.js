@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../../../logo.svg';
 import {Carousel} from 'react-bootstrap'
-import SlideForm from "../itemList/SlideForm";
+import SlideForm from "../itemList/Slide/SlideForm";
 import {Get} from "../utils/apiRequests";
 
 export default class Slider extends React.Component {

@@ -20,6 +20,17 @@ export function Post(api, body, callback) {
         .catch(err => console.log(err))
 }
 
+export function PostFile(api, file, callback) {
+    fetch(api,
+        {
+            method: "POST",
+            body: file
+        })
+        .then(response => response.json())
+        .then(data => callback(data))
+        .catch(err => console.log(err))
+}
+
 export function Put(api, body, callback) {
     fetch(api,
         {
@@ -32,7 +43,9 @@ export function Put(api, body, callback) {
         })
         .then(response => response.json())
         .then(data => callback(data))
-        .catch(err => console.log(err))
+        .catch(err => {
+            
+        })
 }
 
 export function Delete(api, id, callback) {
